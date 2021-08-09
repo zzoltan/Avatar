@@ -20,7 +20,7 @@ function App() {
       </h1>
 
       <dl className="dictionary">
-        {emoji.map(function (elements) {
+        {emoji.map((elements) => {
           return (
             <Elements
               key={elements.id}
