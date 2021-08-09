@@ -2,16 +2,16 @@ import React from "react";
 import Elements from "./Elements";
 import emoji from "../emojipedia";
 
-function getElemek(elements) {
-  return (
-    <Elements
-      key={elements.id}
-      image={elements.emoji}
-      name={elements.name}
-      description={elements.meaning}
-    />
-  );
-}
+// function getElemek(elements) {
+//   return (
+//     <Elements
+//       key={elements.id}
+//       image={elements.emoji}
+//       name={elements.name}
+//       description={elements.meaning}
+//     />
+//   );
+// }
 function App() {
   return (
     <div>
@@ -19,7 +19,18 @@ function App() {
         <span>emojipedia</span>
       </h1>
 
-      <dl className="dictionary">{emoji.map(getElemek)}</dl>
+      <dl className="dictionary">
+        {emoji.map(function (elements) {
+          return (
+            <Elements
+              key={elements.id}
+              image={elements.emoji}
+              name={elements.name}
+              description={elements.meaning}
+            />
+          );
+        })}
+      </dl>
     </div>
   );
 }
